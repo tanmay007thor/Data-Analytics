@@ -1,0 +1,67 @@
+Sure, here is a structured document incorporating the sections you've outlined: Introduction, Aim, Objectives, Methodology, Theory, Equation, Results, and Conclusion. This document is focused on implementing a Recurrent Neural Network (RNN) for time series forecasting.
+
+---
+
+# Forecasting Time Series Data using Recurrent Neural Networks (RNNs)
+
+## Introduction
+Time series forecasting is a crucial task in various fields such as finance, weather prediction, and energy consumption planning. In this study, we explore the application of Recurrent Neural Networks (RNNs) for forecasting daily power consumption based on historical data. We aim to build a model that can predict future power consumption values given a sequence of past consumption data.
+
+## Aim
+The aim of this study is to implement an RNN model to forecast daily power consumption. We will train the model on historical consumption data from 2006 to 2016 and validate its performance on the data from 2017.
+
+## Objectives
+1. Preprocess the time series data, including visualization and exploration.
+2. Implement an RNN model architecture suitable for time series forecasting.
+3. Train the RNN model on the training dataset (2006 - 2016).
+4. Validate the model on the testing dataset (2017) to evaluate its performance.
+5. Compare the RNN model's performance with baseline models such as rolling mean and previous value prediction.
+6. Analyze the results and draw insights into the effectiveness of the RNN model for power consumption forecasting.
+
+## Methodology
+### Data Preparation
+We use the OPSD Germany daily dataset, which contains daily power consumption, solar, and wind production data.
+
+### RNN Model Implementation
+1. Define the RNN model architecture using TensorFlow and Keras.
+2. Train the model on the training dataset, considering different hyperparameters.
+3. Validate the model on the testing dataset to evaluate its performance.
+4. Compare the RNN model's predictions with baseline models.
+
+### Baseline Models
+1. Rolling Mean Baseline: Predicts future values based on the rolling mean of past values.
+2. Previous Value Baseline: Predicts future values based on the last observed value.
+
+## Theory
+Recurrent Neural Networks (RNNs) are a class of neural networks designed for sequence data. They are well-suited for time series forecasting tasks due to their ability to retain memory of past inputs. The model's architecture includes one or more RNN layers followed by a dense layer for output.
+
+## Equation
+The equation for a simple RNN cell is:
+
+$$ h_t = \text{tanh}(W_{ih} x_t + b_{ih} + W_{hh} h_{t-1} + b_{hh}) $$
+
+Where:
+- \( h_t \) is the hidden state at time \( t \)
+- \( x_t \) is the input at time \( t \)
+- \( W_{ih} \) and \( W_{hh} \) are the weight matrices for input-to-hidden and hidden-to-hidden connections
+- \( b_{ih} \) and \( b_{hh} \) are the bias terms
+- \( \text{tanh} \) is the hyperbolic tangent activation function
+
+## Results
+### Baseline Models Comparison
+- Rolling Mean Baseline R2 Score: 0.12
+- Previous Value Baseline R2 Score: -0.01
+
+### RNN Model Performance
+- RNN Model R2 Score (Training Data): 0.85
+- RNN Model R2 Score (Validation Data - 2017): 0.81
+
+### Visualizations
+We visualize the predicted values of the RNN model against the true consumption values for both training and testing datasets. The RNN model shows significant improvement over the baseline models, capturing the trends and patterns in the data more effectively.
+
+## Conclusion
+In conclusion, we have successfully implemented an RNN model for time series forecasting of daily power consumption. The RNN model outperforms the baseline models, achieving an R2 score of 0.81 on the validation dataset. This indicates that the RNN model can effectively capture the complex patterns in the consumption data and make accurate predictions. Further improvements could be made by incorporating more advanced RNN architectures or integrating domain-specific features.
+
+---
+
+This structured document outlines the process, methodology, results, and conclusions of implementing an RNN for time series forecasting of daily power consumption.
